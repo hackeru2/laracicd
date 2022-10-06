@@ -3,12 +3,7 @@ name: CI
 jobs:
   phpunit:
     runs-on: ubuntu-latest
-    container:
-      image: kirschbaumdevelopment/laravel-test-runner:7.3
     steps:
-      - uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
       - name: Prepare Laravel Application
         run: |
           cp .env.example .env
