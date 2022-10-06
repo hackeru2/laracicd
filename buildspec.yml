@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - php --version
+  build:
+    commands:
+      - echo Build started on `date`
+      - cp .env.example .env
+      - php artisan cache:clear
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  type: zip
+  files:
+    - "**/*"
+  name: clyde-$(date +%Y-%m-%d)
